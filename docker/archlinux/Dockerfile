@@ -1,9 +1,9 @@
 FROM archlinux/base:latest
 # Locales keyboard
-RUN echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen \
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
  && locale-gen \
- && echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
-ENV LANG="fr_FR.UTF-8"
+ && echo 'LANG="en_US.UTF-8"' > /etc/locale.conf
+ENV LANG="en_US.UTF-8"
 # Archlinux Deps
 RUN pacman -Syu --noconfirm \ 
       sudo \
@@ -43,6 +43,6 @@ RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 # User run
 USER user
 WORKDIR /home/user/
-ENV LANG="fr_FR.UTF-8"
+ENV LANG="en_US.UTF-8"
 COPY . .
 CMD ["/bin/bash"]
