@@ -3,5 +3,5 @@ set -x GPG_TTY (tty)
 
 # https://github.com/fish-shell/fish-shell/issues/4583
 if status --is-interactive
-    keychain --eval --quiet --ssh-allow-gpg --gpg2 -Q id_rsa | source
+    keychain --eval --quiet -Q id_rsa | source
 end
